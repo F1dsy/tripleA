@@ -50,15 +50,6 @@ export default {};
 $skew-amount: 100px;
 $width: 35%;
 
-@keyframes slideUp {
-  from {
-    height: 0;
-  }
-  to {
-    height: 100%;
-  }
-}
-
 .container {
   width: 100%;
   height: 100vh;
@@ -72,31 +63,29 @@ $width: 35%;
       height: 100%;
       position: absolute;
       .slider {
-        display: none;
+        display: block;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 0;
+        background-color: #000a;
+        transition: height 500ms;
+        h1 {
+          margin-top: 150px;
+          text-align: center;
+          font-size: 3em;
+          color: #fff;
+        }
+        p {
+          margin: 100px 150px;
+          text-align: center;
+          font-size: 2em;
+          color: #fff;
+        }
       }
       &:hover {
         .slider {
-          display: block;
-          position: absolute;
-          bottom: 0;
-          width: 100%;
-          height: 0%;
-          background-color: #000a;
-          animation: slideUp 500ms forwards;
-          h1 {
-            margin-top: 150px;
-            text-align: center;
-            font-size: 3em;
-            color: #fff;
-            font-family: "Segoe UI", Tahoma, Verdana, sans-serif;
-          }
-          p {
-            margin: 100px 150px;
-            text-align: center;
-            font-size: 2em;
-            color: #fff;
-            font-family: "Segoe UI", Tahoma, Verdana, sans-serif;
-          }
+          height: 100%;
         }
       }
       img {
@@ -109,7 +98,7 @@ $width: 35%;
     .pic1 {
       width: $width;
       left: 0;
-      background-color: #f00;
+
       clip-path: polygon(
         0% 100%,
         0% 0%,
@@ -120,7 +109,7 @@ $width: 35%;
     .pic2 {
       left: calc(#{$width} - #{$skew-amount});
       right: calc(#{$width} - #{$skew-amount});
-      background-color: #0f0;
+
       clip-path: polygon(
         0% 100%,
         $skew-amount 0%,
@@ -131,7 +120,7 @@ $width: 35%;
     .pic3 {
       width: $width;
       right: 0;
-      background-color: #00f;
+
       clip-path: polygon(0% 100%, $skew-amount 0%, 100% 0%, 100% 100%);
     }
   }
