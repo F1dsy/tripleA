@@ -6,7 +6,17 @@
 
 module.exports = {
   siteName: 'Gridsome',
+  templates: {
+    BlogPost: "/posts/:id"
+  },
   plugins: [
+    {
+      use: '@gridsome/source-filesystem',
+      options: {
+        path: 'posts/**/*.md',
+        typeName: 'BlogPost',
+      }
+    },
     {
       use: `gridsome-plugin-netlify-cms`,
     }

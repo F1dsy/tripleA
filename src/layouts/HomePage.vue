@@ -1,6 +1,6 @@
 <template>
   <div>
-    <nav>
+    <nav :style="styleObject">
       <h1>Triple AAA</h1>
       <ul>
         <li><a href="/">Home</a></li>
@@ -14,7 +14,27 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      styleObject: {
+        height: "0",
+      },
+    };
+  },
+  created() {
+    window.addEventListener("scroll", this.handleScroll);
+  },
+  methods: {
+    handleScroll() {
+      if (window.scrollY === 0) {
+        this.styleObject.height = 0;
+      } else {
+        this.styleObject.height = "80px";
+      }
+    },
+  },
+};
 </script>
 
 <style scoped lang="scss">
@@ -22,11 +42,12 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 80px;
+  width: 100%;
   padding: 0 40px;
-
+  position: fixed;
   z-index: 10;
-
+  transition: height 500ms;
+  overflow: hidden;
   background-color: white;
   box-shadow: #0005 0 0 10px;
   h1 {

@@ -3,7 +3,7 @@
     <div class="content"></div>
     <div class="overlay">
       <div class="pic pic1">
-        <img src="alina.jpg" />
+        <img src="Alina.jpg" />
         <div class="slider">
           <h1>Alina</h1>
           <p>
@@ -15,7 +15,7 @@
         </div>
       </div>
       <div class="pic pic2">
-        <img src="alina.jpg" />
+        <img src="Anastasia.jpg" />
         <div class="slider">
           <h1>Anastasia</h1>
           <p>
@@ -27,7 +27,7 @@
         </div>
       </div>
       <div class="pic pic3">
-        <img src="alina.jpg" />
+        <img src="Alex2.jpg" />
         <div class="slider">
           <h1>Alex</h1>
           <p>
@@ -60,7 +60,7 @@ $width: 35%;
     display: flex;
 
     .pic {
-      height: 100%;
+      height: inherit;
       position: absolute;
       .slider {
         display: block;
@@ -79,7 +79,7 @@ $width: 35%;
         p {
           margin: 100px 150px;
           text-align: center;
-          font-size: 2em;
+          font-size: 1.5em;
           color: #fff;
         }
       }
@@ -120,8 +120,12 @@ $width: 35%;
     .pic3 {
       width: $width;
       right: 0;
-
+      overflow: hidden;
       clip-path: polygon(0% 100%, $skew-amount 0%, 100% 0%, 100% 100%);
+      img {
+        object-position: 40px -40px;
+        transform: scale(1.2);
+      }
     }
   }
 }
