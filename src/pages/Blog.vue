@@ -5,11 +5,11 @@
 
       <div class="posts">
         <div v-for="edge in $page.posts.edges" :key="edge.id" class="post">
-          <!-- <img src="" alt="" /> -->
-          <h2>{{ edge.node.title }}</h2>
-          <h3>{{ edge.node.excerpt }}</h3>
-
-          <!-- <g-link :to="edge.node.path">Læs mere</g-link> -->
+          <g-link :to="edge.node.path">
+            <img v-bind:src="edge.node.image" alt="" />
+            <h2>{{ edge.node.title }}</h2>
+            <h3>{{ edge.node.excerpt }}</h3>
+          </g-link>
         </div>
       </div>
     </div>
@@ -51,17 +51,26 @@ export default {};
 .posts {
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  padding: 20px 40px;
   .post {
     width: 100%;
     margin: 20px 0;
+    a {
+      text-decoration: none;
+      color: $color1;
+    }
+    img {
+      width: 100%;
+      object-fit: contain;
+      border-radius: 3px;
+    }
     h2 {
       font-size: 1.5em;
-      margin: 10px;
+      margin-top: 10px;
     }
     h3 {
       font-size: 1em;
-      margin: 10px;
+      margin-top: 10px;
     }
   }
 }

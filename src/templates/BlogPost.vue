@@ -22,16 +22,15 @@
 <style lang="scss" scoped>
 @import "~/assets/colorpalette.scss";
 .container {
-  padding: 20px 300px;
-}
-::v-deep p {
-  font-size: 1.2em;
-  margin-top: 20px;
-  color: $color1;
+  padding: 20px;
 }
 h1 {
-  font-size: 2.5em;
-  margin: 20px 0 30px 50px;
+  font-size: 2em;
+  color: $color1;
+}
+::v-deep p {
+  font-size: 1em;
+  margin-top: 20px;
   color: $color1;
 }
 </style>
