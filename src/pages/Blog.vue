@@ -1,10 +1,16 @@
 <template>
   <Layout>
     <div class="container">
-      <h1>Blog Posts</h1>
-      <div v-for="edge in $page.posts.edges" :key="edge.id">
-        <h2>{{ edge.node.title }}</h2>
-        <h3>{{ edge.node.excerpt }}</h3>
+      <h1>Her er vores blogs</h1>
+
+      <div class="posts">
+        <div v-for="edge in $page.posts.edges" :key="edge.id" class="post">
+          <!-- <img src="" alt="" /> -->
+          <h2>{{ edge.node.title }}</h2>
+          <h3>{{ edge.node.excerpt }}</h3>
+
+          <!-- <g-link :to="edge.node.path">Læs mere</g-link> -->
+        </div>
       </div>
     </div>
   </Layout>
@@ -16,9 +22,10 @@
        posts: allBlogPost {
             edges {
                 node {
-                    id
+                    path
                     title
                     excerpt
+                    image
                 }
             }
         }
@@ -31,13 +38,31 @@ export default {};
 </script>
 
 <style lang="scss" scoped>
+@import "../assets/colorpalette.scss";
+
 .container {
+  padding: 30px 0px;
+  min-height: 100vh;
+  h1 {
+    text-align: center;
+    font-size: 2em;
+  }
+}
+.posts {
+  display: flex;
+  flex-direction: column;
   padding: 20px;
-}
-h1 {
-  font-size: 3em;
-}
-h2 {
-  font-size: 2.5em;
+  .post {
+    width: 100%;
+    margin: 20px 0;
+    h2 {
+      font-size: 1.5em;
+      margin: 10px;
+    }
+    h3 {
+      font-size: 1em;
+      margin: 10px;
+    }
+  }
 }
 </style>
