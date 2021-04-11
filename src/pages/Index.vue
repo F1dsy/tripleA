@@ -6,7 +6,7 @@
       </section>
       <section class="second">
         <div class="picframe">
-          <img src="../../static/Alina.jpg" alt="" />
+          <img src="../assets/img/Alina.jpg" alt="" />
         </div>
         <h1>Alina</h1>
         <p>
@@ -18,7 +18,7 @@
       </section>
       <section class="third">
         <div class="picframe">
-          <img src="../../static/Anastasia.jpg" alt="" />
+          <img src="../assets/img/Anastasia.jpg" alt="" />
         </div>
         <h1>Anastasia</h1>
         <p>
@@ -30,7 +30,7 @@
       </section>
       <section class="fourth">
         <div class="picframe">
-          <img src="../../static/Alex2.jpg" alt="" />
+          <img src="../assets/img/Alex2.jpg" alt="" />
         </div>
         <h1>Alex</h1>
         <p>
