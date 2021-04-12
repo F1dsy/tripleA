@@ -37,8 +37,10 @@ export default {
     };
   },
   created() {
-    this.onScroll();
-    window.addEventListener("scroll", this.onScroll);
+    if (process.isClient) {
+      this.onScroll();
+      window.addEventListener("scroll", this.onScroll);
+    }
   },
   methods: {
     handleNav() {
