@@ -99,6 +99,7 @@ nav {
       ul,
       .close {
         opacity: 1;
+        transition: opacity 1s 300ms;
       }
     }
     .close {
@@ -117,7 +118,7 @@ nav {
       justify-content: space-evenly;
       align-items: center;
       opacity: 0;
-      transition: opacity 1s;
+      transition: opacity 300ms;
       li {
         font-size: 1.5em;
         a {
@@ -147,8 +148,7 @@ nav {
         transform: scale(0);
         z-index: -1;
         transform-origin: 50% 50%;
-        // transition: transform 0.5s cubic-bezier(0.755, 0.05, 0.855, 0.06);
-        transition: transform 1s;
+        transition: transform 0.5s cubic-bezier(0.755, 0.05, 0.735, 0.57);
       }
     }
   }
