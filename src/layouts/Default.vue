@@ -1,6 +1,6 @@
 <template>
   <div>
-    <nav>
+    <nav v-bind:class="{ scrolled: isScrolled }">
       <h1>Triple AAA</h1>
       <div class="menu" v-bind:class="{ open: navState }">
         <span class="close" v-on:click="handleNav">&times;</span>
@@ -32,11 +32,23 @@ export default {
   data() {
     return {
       navState: false,
+      isScrolled: false,
     };
+  },
+  created() {
+    this.onScroll();
+    window.addEventListener("scroll", this.onScroll);
   },
   methods: {
     handleNav() {
       this.navState = !this.navState;
+    },
+    onScroll() {
+      if (window.scrollY === 0 && window.location.pathname === "/") {
+        this.isScrolled = true;
+      } else {
+        this.isScrolled = false;
+      }
     },
   },
 };
@@ -53,9 +65,15 @@ nav {
   justify-content: space-between;
   align-items: center;
   height: 80px;
-  background-color: $color3;
   z-index: 1;
   padding: 0 20px;
+  transition: 300ms;
+  background-color: $color3;
+  box-shadow: 0 0 10px #0005;
+  &.scrolled {
+    background-color: $color5;
+    box-shadow: none;
+  }
   h1 {
     font-size: 2em;
     font-weight: 200;
@@ -71,6 +89,7 @@ nav {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.9);
     overflow: hidden;
+    border-radius: 50%;
     &.open {
       width: 100%;
     }

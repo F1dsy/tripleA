@@ -3,6 +3,11 @@
     <div class="content">
       <section class="first">
         <h1>Vi er de tre A'er</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas omnis
+          suscipit mollitia recusandae fugit, rem voluptas magnam vitae hic
+          dolor ut sit.
+        </p>
       </section>
       <section class="second">
         <div class="picframe">
@@ -70,13 +75,13 @@ export default {
 
 section.first {
   width: 100%;
-  height: 500px;
+  height: calc(100vh - 80px);
   background-color: $color5;
   padding: 50% 0;
   text-align: center;
   overflow: hidden;
+  color: white;
   h1 {
-    color: white;
     position: relative;
     font-size: 2.5em;
     &::after {
@@ -88,6 +93,9 @@ section.first {
       position: absolute;
       color: rgba(255, 255, 255, 0.1);
     }
+  }
+  p {
+    margin: 150px 80px;
   }
 }
 section.second,
