@@ -22,7 +22,7 @@ collections:
     files:
       - label: "Gallery"
         name: "gallery"
-        file: "gallery.yaml"
+        file: "static/gallery.yaml"
         fields:
           - label: "List"
             name: "list"
