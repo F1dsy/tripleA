@@ -103,7 +103,6 @@ nav {
       }
     }
     .close {
-      // display: none;
       opacity: 0;
       position: absolute;
       top: 25px;

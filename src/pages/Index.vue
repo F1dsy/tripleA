@@ -69,7 +69,6 @@ export default {
 <style scoped lang="scss">
 @import "../assets/colorpalette.scss";
 .content {
-  // height: 100vh;
   width: 100%;
 }
 
