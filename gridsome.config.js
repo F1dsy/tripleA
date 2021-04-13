@@ -18,6 +18,13 @@ module.exports = {
       }
     },
     {
+      use: '@gridsome/source-filesystem',
+      options: {
+        path: 'static/gallery.yaml',
+        typeName: 'Gallery',
+      }
+    },
+    {
       use: `gridsome-plugin-netlify-cms`,
     }
   ]

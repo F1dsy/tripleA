@@ -6,7 +6,7 @@
         <span class="close" v-on:click="handleNav">&times;</span>
         <ul>
           <li><a href="/">Home</a></li>
-          <li><a href="">Galleri</a></li>
+          <li><a href="/gallery">Galleri</a></li>
           <li><a href="/blog">Blog</a></li>
           <li><a href="">Om os</a></li>
         </ul>
