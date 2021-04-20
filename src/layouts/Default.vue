@@ -72,6 +72,7 @@ nav {
   padding: 0 20px;
   background-color: $color3;
   box-shadow: 0 0 10px #0005;
+  transition: 300ms;
   &.scrolled {
     background-color: $color5;
     box-shadow: none;
@@ -164,6 +165,7 @@ nav {
     .menu {
       float: right;
       position: static;
+      pointer-events: unset;
       width: 50%;
       background-color: transparent;
       .close {
@@ -171,6 +173,7 @@ nav {
       }
       ul {
         flex-direction: row;
+        opacity: 1;
       }
     }
   }
